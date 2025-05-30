@@ -1,0 +1,49 @@
+{% load compress %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django + HTMX + Tailwind CSS</title>
+
+    {% compress css %}
+      <link rel="stylesheet" href="{% static 'src/output.css' %}">
+    {% endcompress %}
+
+  </head>
+  <body>
+    <nav class="bg-gray-800 py-6 relative">
+      <div class="container mx-auto flex">
+        <div class="flex flex-grow">
+          <img class="flex-none w-12 relative ml-2 mr-4" src="{% static 'src/img/ads2.jpg' %}"
+        </div>
+        <div class="flex flex-grow justify-between">
+          <div>
+            <a href="http://127.0.0.1:8000/Tienda" class="text-white text-2xl font-bold lg:mr-7">Tienda</a>
+            <a href="http://127.0.0.1:8000/Productos" class="text-white text-2xl font-bold lg:mr-7">Productos</a>
+            <a href="http://127.0.0.1:8000/Carrito" class="text-white text-2xl font-bold lg:mr-7">Carrito</a>
+          </div>
+          <div>
+            <a href="#" class="text-white border border-white py-2.5 px-5 rounded-md hover:bg-white hover:text-gray-800
+            transition duration-500 ease-in-out">Iniciar sesión</a>
+            <a href="#" class="text-white bg-blue-500 border border-blue-500 py-2.5 px-5 rounded-md hover:bg-blue-600 hover:border-blue-600
+            transition duration-500 ease-in-out">Regístrate</a>
+          </div>
+        </div>
+        
+      <div>
+
+
+
+        </div>
+      </div>
+    </nav>
+    <div> 
+      {% block content %} 
+      {% endblock content %} 
+    </div> 
+  </body>
+</html>
